@@ -31,6 +31,6 @@
   <get url="https://www.f-detali.ru/search.html?article=$Text" var="Weather"> 
      <param name="article" value="$Text"/>
      </get>
-     <output value='get($Weather)'/>
+     <output value='get($Text)'/>
     </input>
 </context>
