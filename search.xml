@@ -1,0 +1,57 @@
+<context>
+
+    <sample>
+        <item value="Кто такая Алиса"/>
+        <item value="Что такое бот"/>
+    </sample>
+
+    <input pattern="* (привет*|здравствуй*) *">
+        <output if="full($UserName)">
+            <item value="Привет, $UserName! Рада снова видеть тебя!"/>
+            <item value="Здравствуй, $UserName! Я уже успела соскучиться..."/>
+        </output>
+
+        <context if="empty($UserName)" id="name">
+            <output value="Привет! Меня зовут Алиса! Как тебя зовут?"/>
+
+            <input pattern="$Text">
+                <var name="UserName" value="cap($Text)" scope="user"/>
+                <output value="Приятно познакомиться, $UserName! Какую деталь тебе найти?"/>
+                <context/>
+            </input>
+        </context>
+    </input>
+
+    <input pattern="* пока *">
+        <var name="end_session" value="javascript: true"/>
+        <output value="Ну пока, незнакомец!" if="empty($UserName)"/>
+        <output value="Пока-пока, $UserName!"/>
+    </input>
+
+    <input pattern="[* (кто|что) так*] $Text">
+        <context id="name" if="empty($UserName)"/>
+
+        <context id="wiki" if="full($UserName)">
+            <get url="http://www.f-detali.com/component/formulashop/search?" var="Wiki">
+                <param name="code" value="$Text"/>
+            </get>
+
+            <var name="Items" value="javascript: $Wiki['code']" if="full($Wiki)" scope="context"/>
+            <var name="Result" value="javascript: $Items[Math.floor(Math.random() * $Items.length)]['title']['content']" if="full($Items)"/>
+
+            <output if="empty($Result)">
+                <item value='Я поискала на сайте f-detali.com, но ничего не нашла по запросу "$Text"'/>
+                <item value="На сайте, к сожалению, ничего не нашлось..."/>
+            </output>
+
+            <output value="$Result" if="full($Result)"/>
+
+            <input pattern="* (еще|другой вариант) *"/>
+
+            <sample value="Другой вариант"/>
+        </context>
+
+
+    </input>
+
+</context>
