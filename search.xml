@@ -28,15 +28,21 @@
         <item value="Перейти на сайт f-detali.com"/>
         </sample>
         
+  
      <output>
-      
-  <![CDATA[
-    <h3>Результат поиска</h3>
-    <a href="http://www.f-detali.com/component/formulashop/search?code=$Text">на сайте f-detali.com</a>
-  ]]>
-      
+  <item>
+    <![CDATA[
+      <h3>Here is your name</h3>
+      <a href="somewebsite.com">$UserName</a>
+    ]]>
+  </item>
+  <item>
+    <![CDATA[
+      <h3>Well, there is your name</h3>
+      <a href="somewebsite.com">$UserName</a>
+    ]]>
+  </item>
 </output>
-     
      
     </input>
 </context>
