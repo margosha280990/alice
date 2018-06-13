@@ -25,12 +25,12 @@
     <input pattern="[* (кто|что) так*] $Text">
         <context id="name" if="empty($UserName)"/>
          <sample>
-        <item value="Перейти на сайт f-detali.com"/>
+        <item value="Перейти на сайт f-detali.ru"/>
         </sample>
       
   <output value='{"text":"Результат поиска можно посмотреть перейдя на сайт f-detali.com","end_session":false,"buttons":[{
-        "url": "http://www.f-detali.com/component/formulashop/search?code=$Text",
-        "title": "Перейти на сайт f-detali.com",
+        "url": "https://www.f-detali.ru/search.html?article=$Text",
+        "title": "Перейти на сайт f-detali.ru",
         "hide": true
       }]}'/>  
     </input>
