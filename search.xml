@@ -1,10 +1,5 @@
 <context>
-
-    <sample>
-        <item value="Перейти на сайт f-detali.com"/>
-    </sample>
-
-    <input pattern="* (привет*|здравствуй*) *">
+ <input pattern="* (привет*|здравствуй*) *">
         <output if="full($UserName)">
             <item value="Привет, $UserName! Рада снова видеть тебя!"/>
             <item value="Здравствуй, $UserName! Я уже успела соскучиться..."/>
@@ -29,6 +24,9 @@
 
     <input pattern="[* (кто|что) так*] $Text">
         <context id="name" if="empty($UserName)"/>
-        <output value='http://www.f-detali.com/component/formulashop/search?code="$Text"'/>
+         <sample>
+        <item value="Перейти на сайт f-detali.com с результатом поиска $Text"/>
+        </sample>
+        <output value='http://www.f-detali.com/component/formulashop/search?code=$Text'/>
     </input>
 </context>
