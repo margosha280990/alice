@@ -28,8 +28,10 @@
         <item value="Перейти на сайт f-detali.com"/>
         </sample>
       
-  <get url="http://www.f-detali.com/component/formulashop/search?code=$Text" var="Weather" />
-  
-     <output value='get("title", $Weather)'/>
+  <output value='{"text":"Результат поиска можно посмотреть перейдя на сайт f-detali.com","end_session":false,"buttons":[{
+        "url": "http://www.f-detali.com/component/formulashop/search?code=$Text",
+        "title": "Перейти на сайт f-detali.com",
+        "hide": true
+      }]}'/>  
     </input>
 </context>
