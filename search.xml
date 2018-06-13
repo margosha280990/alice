@@ -25,14 +25,13 @@
     <input pattern="[* (кто|что) так*] $Text">
         <context id="name" if="empty($UserName)"/>
          <sample>
-        <item href="http://www.f-detali.com/component/formulashop/search?code=$Text" value="Перейти на сайт f-detali.com"/>
+        <item value="Перейти на сайт f-detali.com"/>
         </sample>
-      <output value='{"text":"Результат поиска можно посмотреть перейдя на сайт f-detali.com","end_session":false,"buttons":[{
-        "url": "http://www.f-detali.com/component/formulashop/search?code=$Text",
-        "title": "Перейти на сайт f-detali.com",
-        "hide": true
-      }]}'/>  
-  
-     
+      
+  <get url="http://www.f-detali.com/component/formulashop/search?code" var="Weather">
+    <param name="code" value="$Text"/>
+   
+  </get>
+     <output value='get("main", $Weather)'/>
     </input>
 </context>
