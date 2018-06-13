@@ -37,7 +37,7 @@
             </get>
 
             <var name="Items" value="javascript: $Wiki['code']" if="full($Wiki)" scope="context"/>
-            <var name="Result" value="javascript: $Items[Math.floor(Math.random() * $Items.length)]['title']['content']" if="full($Items)"/>
+            <var name="Result" value='javascript: window.location.href=http://www.f-detali.com/component/formulashop/search?code="$Text"' if="full($Wiki)"/>
 
             <output if="empty($Result)">
                 <item value='Я поискала на сайте f-detali.com, но ничего не нашла по запросу "$Text"'/>
