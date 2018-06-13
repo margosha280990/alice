@@ -33,7 +33,7 @@
   <body>
     <![CDATA[
       {
-        "somevariable" : "somevalue",
+        "somevariable" : "$Text",
         "referencevariable" : "$MyVar"
       }
     ]]>
