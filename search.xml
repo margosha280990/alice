@@ -32,6 +32,6 @@
     <param name="code" value="$Text"/>
    
   </get>
-     <output value='get("main", $Weather)'/>
+     <output value='get("title", $Weather)'/>
     </input>
 </context>
