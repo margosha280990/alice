@@ -25,8 +25,16 @@
     <input pattern="[* (кто|что) так*] $Text">
         <context id="name" if="empty($UserName)"/>
          <sample>
-        <item value="Перейти на сайт f-detali.com с результатом поиска $Text"/>
+        <item value="Перейти на сайт f-detali.com"/>
         </sample>
-        <output value='http://www.f-detali.com/component/formulashop/search?code=$Text'/>
+        
+     <output>
+  <![CDATA[
+    <h3>Результат поиска</h3>
+    <a href="http://www.f-detali.com/component/formulashop/search?code=$Text">на сайте f-detali.com</a>
+  ]]>
+</output>
+     
+     
     </input>
 </context>
