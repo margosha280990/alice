@@ -32,7 +32,7 @@
         <context id="name" if="empty($UserName)"/>
 
         <context id="wiki" if="full($UserName)">
-            <get url="http://www.f-detali.com/component/formulashop/search?" var="Wiki">
+            <get url="http://www.f-detali.com/component/formulashop/search" var="Wiki">
                 <param name="code" value="$Text"/>
             </get>
 
