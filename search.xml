@@ -38,6 +38,8 @@
       }
     ]]>
   </body>
+   <output value='get("ajaxSearch",$Response)'/>
 </post>
+     
     </input>
 </context>
