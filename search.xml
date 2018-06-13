@@ -29,6 +29,6 @@
         </sample>
       
   <get url="https://www.f-detali.ru/search.html?article=$Text" var="Weather" />
-     <output value='fcss(".search_alternatives", $Weather)'/>
+     <output value='css(".search_alternatives", $Weather)'/>
     </input>
 </context>
