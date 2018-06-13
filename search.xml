@@ -28,7 +28,7 @@
         <item value="Перейти на сайт f-detali.ru"/>
         </sample>
       <var name="tts" value="Результат поиска можно посмотреть, перейдя на сайт f-detali.ru"/>
-  <output value='{"text":"Результат поиска можно посмотреть, перейдя на сайт f-detali.ru","end_session":false,"buttons":[{
+  <output value='{"text":"Результат поиска можно посмотреть, перейдя на сайт f-detali.ru","tts":"Результат поиска можно посмотреть, перейдя на сайт f-detali.ru","end_session":false,"buttons":[{
         "url": "https://www.f-detali.ru/search.html?article=$Text",
         "title": "Перейти на сайт f-detali.ru",
         "hide": true
