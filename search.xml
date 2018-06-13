@@ -28,10 +28,7 @@
         <item value="Перейти на сайт f-detali.ru"/>
         </sample>
       
-  <output value='{"text":"Результат поиска можно посмотреть, перейдя на сайт f-detali.ru","end_session":false,"buttons":[{
-        "url": "https://www.f-detali.ru/search.html?article=$Text",
-        "title": "Перейти на сайт f-detali.ru",
-        "hide": true
-      }]}'/>  
+  
+     <output value='fcss(".search_alternatives", $HttpResponse)'/>
     </input>
 </context>
