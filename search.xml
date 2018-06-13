@@ -30,7 +30,7 @@
         
      <output>
       
-  [CDATA[
+  <![CDATA[
     <h3>Результат поиска</h3>
     <a href="http://www.f-detali.com/component/formulashop/search?code=$Text">на сайте f-detali.com</a>
   ]]>
