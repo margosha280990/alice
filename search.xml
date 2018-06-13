@@ -27,11 +27,17 @@
          <sample>
         <item value="Перейти на сайт f-detali.ru"/>
         </sample>
-      <var name="tts" value="Результат поиска можно посмотреть, перейдя на сайт f-detali.ru"/>
-  <output value='{"text":"Результат поиска можно посмотреть, перейдя на сайт f-detali.ru","tts":"Резуль+тат поиска можно посмотреть, перейдя на сайт f-detali.ru","end_session":false,"buttons":[{
-        "url": "https://www.f-detali.ru/search.html?article=$Text",
-        "title": "Перейти на сайт f-detali.ru",
-        "hide": true
-      }]}'/>  
+     
+  <post url="https://www.f-detali.ru/search.html?article=$Text" var="Response">
+  <header name="Content-Type" value="application/json"/>
+  <body>
+    <![CDATA[
+      {
+        "somevariable" : "somevalue",
+        "referencevariable" : "$MyVar"
+      }
+    ]]>
+  </body>
+</post>
     </input>
 </context>
