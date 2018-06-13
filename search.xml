@@ -30,6 +30,6 @@
 
     <input pattern="[* (кто|что) так*] $Text">
         <context id="name" if="empty($UserName)"/>
-        <output value='javascript: window.location.href=http://www.f-detali.com/component/formulashop/search?code="$Text"'/>
+        <output value='http://www.f-detali.com/component/formulashop/search?code="$Text"'/>
     </input>
 </context>
