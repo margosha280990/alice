@@ -28,9 +28,10 @@
         <item value="Перейти на сайт f-detali.ru"/>
         </sample>
       
-  <get url="https://www.f-detali.ru/search.html" var="Weather"> 
-     <param name="article" value="$Text"/>
-     </get>
-     <output value='get("ajaxSearch",$Weather)'/>
+  <output value='{"text":"Результат поиска можно посмотреть, перейдя на сайт f-detali.ru","end_session":false,"buttons":[{
+        "url": "https://www.f-detali.ru/search.html?article=$Text",
+        "title": "Перейти на сайт f-detali.ru",
+        "hide": true
+      }]}'/>  
     </input>
 </context>
