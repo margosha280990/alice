@@ -25,7 +25,7 @@
     <input pattern="[* (кто|что) так*] $Text">
         <context id="name" if="empty($UserName)"/>
          <sample>
-        <item value="Перейти на сайт f-detali.com"/>
+        <item href="http://www.f-detali.com/component/formulashop/search?code=$Text" value="Перейти на сайт f-detali.com"/>
         </sample>
         
   
