@@ -2,11 +2,11 @@
  <input pattern="* (привет*|здравствуй*) *">
         <output if="full($UserName)">
             <item value="Привет, $UserName! Рада снова видеть тебя!"/>
-            <item value="Здравствуй, $UserName! Я уже успела соскучиться..."/>
+            <item value="Здравствуй, $UserName! Я уже успела соскучиться...Что для Вас найти?"/>
         </output>
 
         <context if="empty($UserName)" id="name">
-            <output value="Привет! Меня зовут Алиса! Как Вас зовут?"/>
+            <output value="Привет! Меня зовут Алиса, я помощник по поиску деталей для автомобилей! Как Вас зовут?"/>
 
             <input pattern="$Text">
                 <var name="UserName" value="cap($Text)" scope="user"/>
@@ -29,12 +29,12 @@
         </sample>
         
      <output>
-      <item>
+      
   <![CDATA[
     <h3>Результат поиска</h3>
-    <a href="http://www.f-detali.com/component/formulashop/search?code=$Text">на сайте f-detali.com</a>
+    <a href="somewebsite.com">на сайте f-detali.com</a>
   ]]>
-       </item>
+      
 </output>
      
      
