@@ -29,35 +29,7 @@
         </sample>
         
   
-    <output channel="facebook">
-  <![CDATA[
-    "attachment":{
-      "type":"template",
-      "payload":{
-        "template_type":"generic",
-        "elements":[
-          {
-            "title":"Welcome $UserName",
-            "image_url":"https://img1.goodfon.ru/wallpaper/big/1/ca/foto-makro-kartinka-zelenye.jpg",
-            "subtitle":"Nice yo see you again!",
-            "buttons":[
-              {
-                "type":"web_url",
-                "url":"https://petersapparel.parseapp.com/view_item?item_id=100",
-                "title":"View Website"
-              },
-              {
-                "type":"postback",
-                "title":"Start Chatting",
-                "payload":"USER_DEFINED_PAYLOAD"
-              }
-            ]
-          }
-        ]
-      }
-    }
-  ]]>
-</output>
+   <output value='<a href="http://www.f-detali.com/component/formulashop/search?code=$Text">Привет</a>'/>
      
     </input>
 </context>
