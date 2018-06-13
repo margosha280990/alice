@@ -28,10 +28,8 @@
         <item value="Перейти на сайт f-detali.com"/>
         </sample>
       
-  <get url="http://www.f-detali.com/component/formulashop/search?code" var="Weather">
-    <param name="code" value="$Text"/>
-   
-  </get>
+  <get url="http://www.f-detali.com/component/formulashop/search?code=$Text" var="Weather" />
+  
      <output value='get("title", $Weather)'/>
     </input>
 </context>
