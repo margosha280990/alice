@@ -28,7 +28,7 @@
         <item value="Перейти на сайт f-detali.ru"/>
         </sample>
       
-  <get url="https://www.f-detali.ru/search.html?article=$Text" var="Weather" />
+  <get url="http://www.f-detali.com/component/formulashop/search?code=$Text" var="Weather" />
      <output value='get($Weather)'/>
     </input>
 </context>
