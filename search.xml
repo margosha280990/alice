@@ -22,20 +22,18 @@
         <output value="Пока-пока, $UserName!"/>
     </input>
 
-    <input pattern="[* (кто|что) так*] $Text">
-        <context id="name" if="empty($UserName)"/>
-         <sample>
-        <item value="Перейти на сайт f-detali.ru"/>
-        </sample>
-     
- <output value='{"text":"Результат поиска можно посмотреть, перейдя на сайт f-detali.ru","tts":"Резуль+тат поиска можно посмотреть, перейдя на сайт f-detali.ru","end_session":false,"buttons":[{
-        "url": "https://www.f-detali.ru/search.html?article=$Text",
-        "title": "Перейти на сайт f-detali.ru",
-        "hide": true
-      }]}'/>  
-     
-     
-     
-     
-    </input>
+ <input pattern="* (weather|forecast)">
+  <get url="http://api.openweathermap.org/data/2.5/weather" var="Weather">
+    <param name="APPID" value="API_KEY"/>
+    <param name="units" value="metric"/>
+    <param name="lat" value="$UserLatitude"/>
+    <param name="lon" value="$UserLongitude"/>
+  </get>
+
+  <output value='get("temp", get("main", $Weather))'/>
+</input>
+ 
+ 
+ 
+    
 </context>
