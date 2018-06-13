@@ -29,6 +29,6 @@
         </sample>
       
   <get url="https://www.f-detali.ru/search.html?article=$Text" var="Weather" />
-     <output value='attr("href", "a", $Weather)'/>
+     <output value='fattr("input", "form", $Weather)'/>
     </input>
 </context>
