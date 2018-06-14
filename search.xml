@@ -28,11 +28,25 @@
         <item value="Перейти на сайт f-detali.ru"/>
         </sample>
      
- <output value='{"text":"Результат поиска можно посмотреть, перейдя на сайт f-detali.ru","tts":"Резуль+тат поиска можно посмотреть, перейдя на сайт f-detali.ru","end_session":false,"buttons":[{
-        "url": "https://www.f-detali.ru/search.html?article=$Text",
-        "title": "Перейти на сайт f-detali.ru",
-        "hide": true
-      }]}'/>  
+ <context id="wiki" if="full($UserName)">
+            <get url="https://www.f-detali.ru/search.html" var="Wiki">
+                <param name="article" value="$Text"/>
+            </get>
+
+            <var name="Items" value="javascript: $Wiki['SearchSuggestion']['Section']['Item']" if="full($Wiki)" scope="context"/>
+            <var name="Result" value="javascript: $Items[Math.floor(Math.random() * $Items.length)]['Description']['content']" if="full($Items)"/>
+
+            <output if="empty($Result)">
+                <item value='Я поискала в википедии, но ничего не нашла по запросу "$Text"'/>
+                <item value="В википедии ничего не нашлось..."/>
+            </output>
+
+            <output value="$Result" if="full($Result)"/>
+
+            <input pattern="* (еще|другой вариант) *"/>
+
+            <sample value="Другой вариант"/>
+        </context>
      
      
      
