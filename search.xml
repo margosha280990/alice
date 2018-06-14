@@ -33,11 +33,11 @@
        
 
             <var name="Items" value="javascript: $Wiki['Title']" if="full($Wiki)" scope="context"/>
-            <var name="Result" value="javascript: $Wiki['Title']" if="full($Items)"/>
+            <var name="Result" value="javascript: $Wiki" if="full($Items)"/>
 
             <output if="empty($Result)">
-                <item value='Я поискала в википедии, но ничего не нашла по запросу "$Text"'/>
-                <item value="В википедии ничего не нашлось..."/>
+                <item value='Я поискала на сайте f-detali.ru, но ничего не нашла по запросу "$Text"'/>
+                <item value="На сайте f-detali.ru, к сожалению, ничего не нашлось..."/>
             </output>
 
             <output value="$Result" if="full($Result)"/>
