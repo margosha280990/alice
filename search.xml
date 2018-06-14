@@ -1,16 +1,22 @@
 <context>
- <input pattern="* (привет*|здравствуй*) *">
+
+    <sample>
+        <item value="Кто такая Алиса"/>
+        <item value="Что такое бот"/>
+    </sample>
+
+    <input pattern="* (привет*|здравствуй*) *">
         <output if="full($UserName)">
             <item value="Привет, $UserName! Рада снова видеть тебя!"/>
-            <item value="Здравствуй, $UserName! Я уже успела соскучиться...Что для Вас найти?"/>
+            <item value="Здравствуй, $UserName! Я уже успела соскучиться..."/>
         </output>
 
         <context if="empty($UserName)" id="name">
-            <output value="Привет! Меня зовут Алиса, я помощник по поиску деталей для автомобилей! Как Вас зовут?"/>
+            <output value="Привет! Меня зовут Алиса! А это - демонстрация моего навыка, созданного с помощью платформы zenbot. Как тебя зовут?"/>
 
             <input pattern="$Text">
                 <var name="UserName" value="cap($Text)" scope="user"/>
-                <output value="Приятно познакомиться, $UserName! Какой номер детали Вам найти?"/>
+                <output value="Приятно познакомиться, $UserName! Напиши мне что-нибудь."/>
                 <context/>
             </input>
         </context>
@@ -22,22 +28,22 @@
         <output value="Пока-пока, $UserName!"/>
     </input>
 
- <input pattern="[* (кто|что) так*] $Text">
+    <input pattern="[* (кто|что) так*] $Text">
         <context id="name" if="empty($UserName)"/>
-         <sample>
-        <item value="Перейти на сайт f-detali.ru"/>
-        </sample>
-     
- <context id="wiki" if="full($UserName)">
-            <get url="https://www.f-detali.ru/search.html?article=$Text" var="Wiki" />
-       
 
-            <var name="Items" value="javascript: $Wiki" if="full($Wiki)" scope="context"/>
+        <context id="wiki" if="full($UserName)">
+            <get url="http://ru.wikipedia.org/w/api.php" var="Wiki">
+                <param name="format" value="xml"/>
+                <param name="action" value="opensearch"/>
+                <param name="search" value="$Text"/>
+            </get>
+
+            <var name="Items" value="javascript: $Wiki['SearchSuggestion']['Section']['Item']" if="full($Wiki)" scope="context"/>
             <var name="Result" value="javascript: $Items[Math.floor(Math.random() * $Items.length)]['Description']['content']" if="full($Items)"/>
 
             <output if="empty($Result)">
-                <item value='Я поискала на сайте f-detali.ru, но ничего не нашла по запросу "$Text"'/>
-                <item value="На сайте f-detali.ru, к сожалению, ничего не нашлось..."/>
+                <item value='Я поискала в википедии, но ничего не нашла по запросу "$Text"'/>
+                <item value="В википедии ничего не нашлось..."/>
             </output>
 
             <output value="$Result" if="full($Result)"/>
@@ -46,13 +52,8 @@
 
             <sample value="Другой вариант"/>
         </context>
-     
-     
-     
-     
+
+
     </input>
- 
- 
- 
-    
+
 </context>
