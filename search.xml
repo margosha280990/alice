@@ -44,7 +44,11 @@
 
             <input pattern="* (еще|другой вариант) *"/>
 
-            <sample value="Другой вариант"/>
+           <output value='{"end_session":false,"buttons":[{
+        "url": "https://www.f-detali.ru/search.html?article=$Text",
+        "title": "Перейти на сайт f-detali.ru",
+        "hide": true
+      }]}'/>  
         </context>
      
      
