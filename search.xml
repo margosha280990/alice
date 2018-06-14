@@ -33,7 +33,7 @@
        
 
             <var name="Items" value="javascript: $Wiki['Title']" if="full($Wiki)" scope="context"/>
-            <var name="Result" value="javascript: $Items[Math.floor(Math.random() * $Items.length)]['Description']['content']" if="full($Items)"/>
+            <var name="Result" value="javascript: $Wiki['Title']" if="full($Items)"/>
 
             <output if="empty($Result)">
                 <item value='Я поискала в википедии, но ничего не нашла по запросу "$Text"'/>
