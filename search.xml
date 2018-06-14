@@ -42,7 +42,7 @@
 
             <output value="$Result" if="full($Result)"/>
 
-            <input pattern="* (еще|другой вариант) *"/>
+           
 
            <output value='{"end_session":false,"buttons":[{
         "url": "https://www.f-detali.ru/search.html?article=$Text",
