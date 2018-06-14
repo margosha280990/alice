@@ -32,7 +32,7 @@
             <get url="https://www.f-detali.ru/search.html?article=$Text" var="Wiki" />
        
 
-            <var name="Items" value="javascript: $Wiki['Item']" if="full($Wiki)" scope="context"/>
+            <var name="Items" value="javascript: $Wiki['Title']" if="full($Wiki)" scope="context"/>
             <var name="Result" value="javascript: $Items[Math.floor(Math.random() * $Items.length)]['Description']['content']" if="full($Items)"/>
 
             <output if="empty($Result)">
