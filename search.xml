@@ -32,8 +32,8 @@
             <get url="https://www.f-detali.ru/search.html?article=$Text" var="Wiki" />
        
 
-            <var name="Items" value="javascript: $Wiki['Title']" if="full($Wiki)" scope="context"/>
-            <var name="Result" value="javascript: $Wiki" if="full($Items)"/>
+            <var name="Items" value="javascript: $Wiki['SearchSuggestion']" if="full($Wiki)" scope="context"/>
+            <var name="Result" value="javascript: $Wiki['SearchSuggestion']" if="full($Items)"/>
 
             <output if="empty($Result)">
                 <item value='Я поискала на сайте f-detali.ru, но ничего не нашла по запросу "$Text"'/>
