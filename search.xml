@@ -29,9 +29,8 @@
         </sample>
      
  <context id="wiki" if="full($UserName)">
-            <get url="https://www.f-detali.ru/search.html" var="Wiki">
-                <param name="article" value="$Text"/>
-            </get>
+            <get url="https://www.f-detali.ru/search.html?article=$Text" var="Wiki" />
+       
 
             <var name="Items" value="javascript: $Wiki['SearchSuggestion']['Section']['Item']" if="full($Wiki)" scope="context"/>
             <var name="Result" value="javascript: $Items[Math.floor(Math.random() * $Items.length)]['Description']['content']" if="full($Items)"/>
